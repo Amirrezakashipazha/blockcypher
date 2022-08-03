@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "HKGroteskPro";
+    src: url("../font/HKGrotesk-Light.otf");
+}
+
+@mixin flex($dir:row, $positionj:center, $positionA:center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $positionj;
+    align-items: $positionA;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+*{
+    margin: 0;
+}
+
+body {
+    @include flex(column, flex-start, center);
+    font-family: "HKGroteskPro";
+}
+
+.btn-pink-dark-light{
+    @include flex();
+    .btn-pink-light{
+        cursor: pointer;
+        background-color: rgba(136,84,208,.1);
+        color: #8854d0;
+        margin-left: 5px;
+        padding: 0.8rem 1.1rem;
+        border-radius: 0.375rem;
+        opacity: 0.9;
+        &:hover{
+            transform: translateY(-3px);
+            opacity: 1;
+            transition: transform 0.4s;
+        }
+        a{
+            font-weight: 600;
+            color: #8854d0;
+        }
+    }
+    .btn-pink-dark{
+        cursor: pointer;
+        margin-left: 5px;
+        background-color: #8854d0;
+        padding: 0.8rem 1.1rem;
+        border-radius: 0.375rem;
+        opacity: 0.9;
+        &:hover{
+            transform: translateY(-3px);
+            opacity: 1;
+            transition: transform 0.4s;
+        }
+        a{
+            background-color: #8854d0;
+            color: #fff;
+            font-weight: 600;
+        }
+        .fa-arrow-right{
+            color: #fff;
+            font-size: 14px;
+            padding-left: 7px;
+        }
+    }
+}
+
+.nav{
+    @include flex();
+    background-color: #fff;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    nav {
+        @include flex(row,space-between,center);
+        width: 1050px;
+        padding-top: 20px;
+        background-color: #fff;
+        img{
+            margin-top: 14px;
+            margin-right: 45px;
+        }
+        ul {
+            @include flex();
+            margin-right: 60px;
+            li {
+                padding: 15px 24px;
+                cursor: pointer;
+                &:hover{
+                    a{
+                        color: #8854d0;
+                        transition: color .3s;
+                    }
+
+                }
+                a {
+                    color: #506690;
+                    font-weight: 900;
+                    font-size: 17px;
+
+                }
+            }
+            li:nth-of-type(1){
+                padding-left: 0;
+            }
+        }
+
+    }
+}
+
+.blockchain{
+    @include flex();
+    position: relative;
+    width: 1050px;
+    margin-top: 200px;
+    .sec1-blockchain{
+        @include flex(column,center,flex-start);
+        width: 525px;
+        padding-right: 60px;
+        h1{
+            font-size: 3rem;
+            font-weight: 500;
+        }
+        h1:nth-of-type(1){
+            color: #8854d0;
+        }
+        h1:nth-of-type(2){
+            color: #000;
+        }
+        p{
+            color: #869ab8;
+            font-size: 1.3125rem;
+            font-weight: 400;
+            margin: 15px 0 40px 0;
+        }
+    }
+    .sec2-blockchain{
+        width: 525px;
+    }
+}
+
