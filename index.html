@@ -6,22 +6,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/977b193dda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Document</title>
 </head>
 
 <body>
-
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/js.js"></script>
+    <!-- این لامصب جی کوریو همیشه جلوتر از فایل جاوا اسکریپت بزار  -->
+	<style>
+		#glow {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 500px;
+			height: 500px;
+			transform: translate(-50%, -50%);
+			background: radial-gradient(ellipse at center, rgba(0, 156, 255, 0.05) 25%, rgba(0, 156, 255, 0.15) 53%, rgba(0, 156, 255, 0.05) 56%, rgba(0, 156, 255, 0) 70%);
+			z-index: 200;
+			pointer-events: none;
+		}
+	</style>
+    <div class="d-close" onclick="closemenu()"><i class="material-icons">close</i></div>
     <div class="nav">
         <nav>
             <a href="#"><img src="img/brand.svg" alt="logo"></a>
             <ul>
-                <li><a href="#">Products</a></li>
+                <li><a href="#" id="prodoct-hover">Products</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Company</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Docs</a></li>
+                <li><a href="#" id="docs-hover">Docs</a></li>
             </ul>
+
+            <div class="hover-li" id="li-prodoct">
+                <div class="d-hover-li">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h6>APIs</h6>
+                        <p>Build Your Blockchain App</p>
+                    </div>
+                </div>
+                <div class="d-hover-li">
+                    <i class="fa fa-th-large"></i>
+                    <div>
+                        <h6>Block Explorer</h6>
+                        <p>Explore the Blockchain</p>
+                    </div>
+                </div>
+                <div class="d-hover-li">
+                    <i class="fas fa-hammer"></i>
+                    <div>
+                        <h6>Mining Pool</h6>
+                        <p>Mine Grin on Grinmint</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hover-li" id="li-docs">
+                <div class="d-hover-li">
+                    <i class="	far fa-address-book"></i>
+                    <div>
+                        <h6>Getting Started</h6>
+                        <p>Customizing and building</p>
+                    </div>
+                </div>
+                <div class="d-hover-li">
+                    <i class="fa fa-th-large"></i>
+                    <div>
+                        <h6>Bitcoin / Dash / Doge / Litecoin</h6>
+                        <p>API Documentation</p>
+                    </div>
+                </div>
+                <div class="d-hover-li">
+                    <i class="material-icons"> note</i>
+                    <div>
+                        <h6>Ethereum</h6>
+                        <p>API Documentation</p>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="btn-pink-dark-light">
                 <div class="btn-pink-light">
                     <a href="#">Login</a>
@@ -32,10 +103,75 @@
                 </div>
 
             </div>
+
+            <button class="btnnav" onclick="showmenu()"><i class="material-icons"> menu</i></button>
+
+            <div class="show-menu hover-li">
+
+                <div class="border-bottom prodoct-close">
+                    <a href="#">Products</a>
+
+                </div>
+
+                <div class="d-hover-li border-bottom">
+                    <i class="fas fa-bolt"></i>
+                    <div class="no-border">
+                        <h6>APIs</h6>
+                        <p>Build Your Blockchain App</p>
+                    </div>
+                </div>
+                <div class="d-hover-li border-bottom">
+                    <i class="fa fa-th-large"></i>
+                    <div class="no-border">
+                        <h6>Block Explorer</h6>
+                        <p>Explore the Blockchain</p>
+                    </div>
+                </div>
+                <div class="d-hover-li border-bottom">
+                    <i class="fas fa-hammer"></i>
+                    <div class="no-border">
+                        <h6>Mining Pool</h6>
+                        <p>Mine Grin on Grinmint</p>
+                    </div>
+                </div>
+
+                <div class="border-bottom"><a href="#">Pricing</a></div>
+                <div class="border-bottom"><a href="#">Company</a></div>
+                <div class="border-bottom"><a href="#">Blog</a></div>
+                <div class="border-bottom"><a href="#">Docs</a></div>
+
+                <div class="d-hover-li border-bottom">
+                    <i class="	far fa-address-book"></i>
+                    <div class="no-border">
+                        <h6>Getting Started</h6>
+                        <p>Customizing and building</p>
+                    </div>
+                </div>
+                <div class="d-hover-li border-bottom">
+                    <i class="fa fa-th-large"></i>
+                    <div class="no-border">
+                        <h6>Bitcoin / Dash / Doge / Litecoin</h6>
+                        <p>API Documentation</p>
+                    </div>
+                </div>
+                <div class="d-hover-li border-bottom">
+                    <i class="material-icons"> note</i>
+                    <div class="no-border">
+                        <h6>Ethereum</h6>
+                        <p>API Documentation</p>
+                    </div>
+                </div>
+
+                <div class="btns-akhar-menu">
+                    <a class="a1-akhar-menu">Login</a>
+                    <a class="a2-akhar-menu">Sign Up</a>
+                </div>
+            </div>
         </nav>
     </div>
 
     <section class="blockchain">
+
         <section class="sec1-blockchain">
             <h1>Blockchain</h1>
             <h1>Web Services.</h1>
@@ -54,9 +190,204 @@
         </section>
 
         <section class="sec2-blockchain">
+            <div id="myearth">
+                <div id="glow"></div>
+            </div>
+        </section>
 
+
+    </section>
+
+    <section class="icon_3_pedar">
+        <section class="icons_3">
+            <div>
+                <i class="fa fa-thumbs-up"></i>
+                <p>Trusted</p>
+                <p>From startups to large enterprise, thousands of businesses trust BlockCypher to integrate blockchain
+                    into
+                    their applications.</p>
+            </div>
+            <div>
+                <i class="fas fa-bolt"></i>
+                <p>Supercharged APIs</p>
+                <p>Our state-of-the-art, fast and powerful global infrastructure will take your apps to the next level.
+                </p>
+            </div>
+            <div>
+                <i class="material-icons"> access_time</i>
+                <p>Track Record</p>
+                <p>Since 2014, we are providing world-class APIs. And we are not going anywhere. So you can write your
+                    app
+                    worry-free.</p>
+            </div>
         </section>
     </section>
+
+    <section class="icon_brand">
+        <img src="img/Logo_BitGo.png" alt="">
+        <img src="img/coinbase.webp" alt="">
+        <img src="img/Proton 1993 03.png" alt="">
+        <img src="img/download.png" alt="">
+        <img src="img/salt-crypto-logo.png" alt="">
+        <img src="img/tZERO-Logo.png" alt="">
+    </section>
+
+    <section class="Build">
+        <section class="Build_chlid">
+            <section class="sec-1-Build-child">
+                <h6>DESIGNED FOR DEVELOPERS</h6>
+                <h1>Build Your Decentralized Application</h1>
+                <p>Leverage the power of BlockCypher APIs to develop your application.</p>
+                <div class="d-sec-1-Build-child">
+                    <i class="	fas fa-hdd"></i>
+                    <div>
+                        <h5>From Prototype to Production</h5>
+                        <p>Build blockchain applications easily with our web APIs and callbacks. High throughputs,
+                            linear scaling and low-latency.</p>
+                    </div>
+                </div>
+                <div class="d-sec-1-Build-child">
+                    <i class="fa fa-code"></i>
+                    <div>
+                        <h5>REST APIs</h5>
+                        <p>Simple and easy web APIs (REST) enable developers to build blockchain applications quickly
+                            and confidently.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec-2-Build-child">
+                <div class="d-1-sec-2-Build-child">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="d-2-sec-2-Build-child">
+
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section class="Powerful">
+
+        <section class="sec-1-Powerful">
+            <h6>WHY BLOCKCYPHER</h6>
+            <h1>A Powerful Infrastructure at Your Fingertips</h1>
+            <p>Looks easy huh? Under the hood, BlockCypher APIs feature state-of-art engineering. And, if you are
+                struggling, we are always here to help.</p>
+        </section>
+
+        <section class="sec-2-Powerful">
+            <div>
+                <i class="	fas fa-server"></i>
+                <h5>Multiple Data Centers</h5>
+                <p>Our architecture allows us to run in multiple data centers for redundancy and low-latency.</p>
+            </div>
+            <div>
+                <i class="	fa fa-th"></i>
+                <h5>Robust Data Stores</h5>
+                <p>We maintain a cluster of distributed databases which contain all transactional data for the entire
+                    blockchain.</p>
+            </div>
+            <div>
+                <i class="material-icons"> share</i>
+                <h5>Full Blockchain Nodes</h5>
+                <p>We host full-node blockchains for optimal security in validating and relaying transactions.</p>
+            </div>
+            <div>
+                <i class="fas fa-arrows-alt-h"></i>
+                <h5>24/7 Support</h5>
+                <p>Our focus is to make our customers successful as they build their next-generation blockchain
+                    applications.</p>
+            </div>
+        </section>
+
+    </section>
+
+    <section class="Build-now-pedar">
+
+        <section class="Build-now">
+            <div class="d-1-Build-now">
+                <h6>BY THE NUMBERS</h6>
+                <h1>Build your App <span>Now</span>.</h1>
+                <p>Thousands of users trust BlockCypher everyday to power their Blockchain applications.</p>
+            </div>
+
+            <div class="d-2-Build-now">
+                <div>
+                    <h3>65k+</h3>
+                    <p>Customers</p>
+                </div>
+                <div>
+                    <h3>99.99%</h3>
+                    <p>Uptime</p>
+                </div>
+                <div>
+                    <h3>10M+</h3>
+                    <p>Requests per Day</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="ready">
+        <h1>Ready to get started?</h1>
+        <p>Create an account, get a free api token, look up our <a>docs</a> and build your dream blockchain app.</p>
+        <div class="btn-pink-dark-light">
+
+            <div class="btn-pink-dark">
+                <a href="#">Learn More</a><i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="btn-pink-light">
+                <a href="#">Pricing</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <section class="footer-child">
+            <div class="f-logo">
+                <img src="img/brand.svg" alt="">
+                <p style="font-size:17px;">Blockchain Web Services.</p>
+                <ul>
+                    <li><a href=""><i class="fab fa-github"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="d-footer">
+                <p>PRODUCTS</p>
+                <a href="">APIS</a>
+                <a href="">Explorer</a>
+                <a href="">Mining Pool</a>
+            </div>
+            <div class="d-footer">
+                <p>DOCUMENTATION</p>
+                <a href="">Getting Started</a>
+                <a href="">Bitcoin API</a>
+                <a href="">Ethereum API</a>
+            </div>
+            <div class="d-footer">
+                <p>COMPANY</p>
+                <a href="">About Us</a>
+                <a href="">Blog</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms of Services</a>
+            </div>
+            <div class="d-footer">
+                <p>SUPPORT</p>
+                <a href="">Contact Us</a>
+                <a href="">Status</a>
+            </div>
+        </section>
+
+    </footer>
+
 </body>
 
 </html>
