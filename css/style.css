@@ -11,7 +11,7 @@ a {
   text-decoration: none;
 }
 
-* {
+*:not(.nav, .btn-pink-dark-light) {
   margin: 0;
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
@@ -70,11 +70,14 @@ body {
   opacity: 1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-box-shadow: 1px 2px 10px 0.5px #dfdfdf;
+          box-shadow: 1px 2px 10px 0.5px #dfdfdf;
 }
 
 .btn-pink-dark-light .btn-pink-light a {
   font-weight: 600;
   color: #8854d0;
+  opacity: 1 !important;
 }
 
 .btn-pink-dark-light .btn-pink-dark {
@@ -94,6 +97,8 @@ body {
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   transition: transform 0.4s, -webkit-transform 0.4s;
+  -webkit-box-shadow: 1px 2px 10px 0.5px #dfdfdf;
+          box-shadow: 1px 2px 10px 0.5px #dfdfdf;
 }
 
 .btn-pink-dark-light .btn-pink-dark a {
@@ -145,7 +150,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 1050px;
+  height: 100%;
   padding: 17px 0;
+  overflow-x: visible !important;
   background-color: #fff;
   position: relative;
 }
@@ -227,15 +234,15 @@ body {
   top: 65px;
   left: 160px;
   display: none;
-  -webkit-transform: translateY(9px);
-          transform: translateY(9px);
+  z-index: 100000000;
 }
 
 .nav nav #li-docs {
   position: absolute;
   top: 65px;
-  right: 90px;
+  right: 140px;
   display: none;
+  z-index: 100000000;
 }
 
 .nav nav .hover-li {
@@ -302,8 +309,7 @@ body {
 }
 
 .hover-li {
-  width: 310px;
-  padding: 0 30px;
+  width: 100%;
   cursor: pointer;
   background-color: #fff;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(24, 30, 48, 0.15);
@@ -345,7 +351,6 @@ body {
 }
 
 .hover-li .d-hover-li:nth-child(2) {
-  border-top: 1px solid #f1f4f8;
   border-bottom: 1px solid #f1f4f8;
 }
 
@@ -363,27 +368,27 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
-  width: 100%;
-  height: 800px;
-  border-radius: 7px;
+  width: 97%;
+  height: 960px;
+  border-radius: 0 0 7px 7px;
   z-index: 10000000;
   display: none;
   background-color: #fff;
   overflow-y: scroll !important;
-  overflow-x: hidden;
 }
 
 .show-menu .border-bottom {
-  padding: 24px 0;
+  padding: 24px 30px;
   overflow-y: hidden;
 }
 
 .show-menu div {
   cursor: pointer;
   width: 100%;
+  height: 80px;
   border-bottom: 1px solid #f1f4f8;
 }
 
@@ -401,6 +406,7 @@ body {
 
 .show-menu .no-border {
   border: none;
+  padding-top: 20px;
 }
 
 .show-menu .btns-akhar-menu {
@@ -417,10 +423,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-y: hidden;
+  position: relative;
 }
 
 .show-menu .btns-akhar-menu .a1-akhar-menu {
-  width: 102%;
+  overflow-y: hidden;
+  width: 100%;
+  height: 80px;
   font-size: 1.0625rem;
   padding: 0.8125rem 1.25rem;
   text-align: center;
@@ -429,7 +439,9 @@ body {
 }
 
 .show-menu .btns-akhar-menu .a2-akhar-menu {
-  width: 102%;
+  overflow-y: hidden;
+  width: 100%;
+  height: 80px;
   font-size: 1.0625rem;
   padding: 0.8125rem 1.25rem;
   text-align: center;
@@ -458,9 +470,9 @@ body {
 
 .d-close {
   position: fixed;
-  z-index: 100000000;
+  z-index: 10000000000;
   top: 25px;
-  right: 25px;
+  right: 45px;
   margin: 0;
   font-size: 20px;
   border: none;
@@ -487,12 +499,14 @@ body {
           align-items: center;
   position: relative;
   width: 1050px;
-  margin-top: 200px;
+  margin-top: 100px;
+  overflow: hidden;
 }
 
 @media (max-width: 1050px) {
   .blockchain {
     width: 100%;
+    padding-top: 100px;
   }
 }
 
@@ -528,6 +542,10 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -572,6 +590,9 @@ body {
   width: 525px;
   height: 100%;
   overflow-y: hidden;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
 }
 
 .blockchain .sec2-blockchain #myearth {
@@ -594,6 +615,9 @@ body {
           align-items: center;
   width: 100%;
   border-bottom: 1px solid #f1f4f8 !important;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 @media (max-width: 1050px) {
@@ -617,7 +641,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 1050px;
-  padding: 250px 0 120px 0;
+  padding: 150px 0 120px 0;
 }
 
 @media (max-width: 1050px) {
@@ -693,6 +717,9 @@ body {
           align-items: center;
   padding: 30px 0;
   width: 1050px;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 .icon_brand img {
@@ -754,6 +781,9 @@ body {
   height: 100%;
   background-color: #1b2a4e;
   overflow-x: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 .Build .Build_chlid {
@@ -937,15 +967,20 @@ body {
   padding: 35px;
 }
 
-.Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p1-type {
+.Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p1-type, .Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p3-type, .Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p4-type, .Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p5-type {
   color: #fff;
   font-size: 12px;
   padding-bottom: 20px;
 }
 
+.Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child p:empty {
+  display: none;
+}
+
 .Build .Build_chlid .sec-2-Build-child .d-2-sec-2-Build-child #p2-type {
   color: #20c997;
   font-size: 12px;
+  padding-bottom: 20px;
 }
 
 .Powerful {
@@ -964,6 +999,9 @@ body {
           align-items: flex-start;
   width: 1050px;
   padding: 80px 0;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 @media (max-width: 1050px) {
@@ -1063,6 +1101,7 @@ body {
 .Powerful .sec-2-Powerful div i {
   color: #8854d0;
   font-size: 38px;
+  overflow-y: hidden;
 }
 
 .Powerful .sec-2-Powerful div h5 {
@@ -1093,6 +1132,7 @@ body {
           align-items: center;
   width: 100%;
   background-color: #1b2a4e;
+  overflow-y: hidden;
 }
 
 .Build-now-pedar .Build-now {
@@ -1111,6 +1151,9 @@ body {
           align-items: space-between;
   width: 1050px;
   padding: 80px 0 120px 0;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
 }
 
 @media (max-width: 1050px) {
@@ -1219,6 +1262,9 @@ body {
   margin: 100px 0 30px 0;
   width: 1050px;
   height: 100%;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 @media (max-width: 1050px) {
